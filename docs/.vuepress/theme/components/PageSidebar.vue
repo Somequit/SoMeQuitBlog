@@ -174,7 +174,6 @@
 <script>
 import PageSidebarToc from '@theme/components/PageSidebarToc.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
-import FullScreenBtn from '@theme/components/FullScreenBtn.vue'
 import SiteMap from '@theme/components/SiteMap.vue'
 import PageSidebarBackToTop from '@theme/components/PageSidebarBackToTop.vue'
 import { resolvePage } from '../util'
@@ -182,7 +181,7 @@ import { resolvePage } from '../util'
 export default {
   name: 'PageSidebar',
 
-  components: { PageSidebarToc, NavLinks, FullScreenBtn, SiteMap, PageSidebarBackToTop },
+  components: { PageSidebarToc, NavLinks, SiteMap, PageSidebarBackToTop },
 
   props: ['pageSidebarItems', 'sidebarItems'],
 
