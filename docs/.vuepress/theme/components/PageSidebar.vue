@@ -42,7 +42,7 @@
               <div class="icon-arrow"></div>
               <div class="scroll-box" style="text-align:center" >
                 <span style="font-size:0.9rem">微信扫一扫</span>
-                <img v-bind="{src: 'https://api.qrserver.com/v1/create-qr-code/?data=https://bugstack.cn'+this.$route.fullPath }" height="180px" style="margin:10px;"/>
+                <img v-bind="{src: 'https://api.qrserver.com/v1/create-qr-code/?data=https://blogs.gsxblog.cn'}" height="180px" style="margin:10px;"/>
                 可以<b>手机看</b>或分享至<b>朋友圈</b>
               </div>
             </div>
@@ -58,64 +58,9 @@
         <span class="show-txt">左栏</span>
       </div>
 
-      <div class="option-box" v-on:mouseout="hideToc($event)" v-on:mouseover="showToc($event)" onclick="javascript:window.open('https://wx.zsxq.com/dweb2/index/group/48411118851818','_blank')">
-        <img class="nozoom" src="/images/system/xingqiu.png" width="25px" />
-        <span class="show-txt">星球</span>
-        <div class="toc-container">
-          <div class="pos-box">
-            <div class="icon-arrow"></div>
-            <div class="scroll-box" style="text-align:center" >
-              <span style="font-size:0.8rem;font-weight:bold;">实战项目<span style="font-size:8px;color:red;">「DDD+RPC分布式抽奖系统」</span>、专属小册、问题解答、简历指导、架构图稿、视频课程</span>
-              <img height="180px" src="/images/personal/xingqiu.png" style="margin:10px;"/>
-              <b>知识星球</b>：码农会锁
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">
-        <img class="nozoom" src="/images/system/wexin4.png" width="25px" />
-        <span class="show-txt">读者群</span>
-        <div class="toc-container">
-            <div class="pos-box">
-              <div class="icon-arrow"></div>
-              <div class="scroll-box" style="text-align:center" >
-                <span style="font-size:0.8rem;font-weight:bold;">添加小傅哥微信<span style="color:red;">(fustack)</span>进虫洞栈学习交流圈「无任何套路」</span>
-                <img src="/images/personal/fustack.png" height="180px" style="margin:10px;"/>
-                PS：添加时请备注<b>读者加群</b>，谢谢！
-              </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">
-        <img class="nozoom" src="/images/system/download-2.png" width="25px" />
-        <span class="show-txt">下资料</span>
-        <div class="toc-container">
-            <div class="pos-box">
-              <div class="icon-arrow"></div>
-              <div class="scroll-box" style="text-align:center" >
-                <span style="font-size:0.8rem;font-weight:bold;">扫描公众号，回复<span style="color:red;">“1024”</span>下载<span style="color:red;">100GB+</span>大学到毕业分阶段学习技术资料、PDF书籍、实战项目、简历模板等「无任何套路」</span>
-                <img src="/images/personal/qrcode.png" height="180px" style="margin:10px;"/>
-                <b>公众号:</b> bugstack虫洞栈
-              </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="option-box" v-on:mouseout="hideToc($event)" v-on:mouseover="showToc($event)" onclick="javascript:window.open('https://t.zsxq.com/17UIvdgb3','_blank')">
-          <img class="nozoom" src="/images/system/interview.png" width="25px" />
-          <span class="show-txt">八股文</span>
-<!--          <div class="toc-container">-->
-<!--              <div class="pos-box">-->
-<!--                  <div class="icon-arrow"></div>-->
-<!--                  <div class="scroll-box" style="text-align:center" >-->
-<!--                      <span style="font-size:0.8rem;font-weight:bold;">实战项目<span style="font-size:8px;color:red;">「DDD+RPC分布式抽奖系统」</span>、专属小册、问题解答、简历指导、架构图稿、视频课程</span>-->
-<!--                      <img height="180px" src="/images/personal/xingqiu.png" style="margin:10px;"/>-->
-<!--                      <b>知识星球</b>：码农会锁-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--          </div>-->
+      <div class="option-box" v-on:mouseout="hideToc($event)" v-on:mouseover="showToc($event)" onclick="javascript:window.open('https://blog.csdn.net/qq_33530115','_blank')">
+        <img class="nozoom" src="/images/system/csdn.png" width="25px" />
+        <span class="show-txt">CSDN</span>
       </div>
 
 <!--      <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">-->
@@ -134,36 +79,9 @@
 <!--        </div>-->
 <!--      </div>-->
 
-      <div class="option-box" v-if="prev" style="padding-left:2px;text-align:center;" v-bind:title="prev.title">
-          <router-link v-if="prev" :to="prev.path" >
-            <img src="/images/system/pre2.png" width="30px" class="nozoom" />
-            <span class="show-txt">上一篇</span>
-          </router-link>
-      </div>
-      <div class="option-box" v-if="next" style="padding-left:2px;text-align:center;" v-bind:title="next.title">
-          <router-link v-if="next" :to="next.path" >
-            <img src="/images/system/next2.png" width="30px" class="nozoom" />
-            <span class="show-txt">下一篇</span>
-          </router-link>
-      </div>
     </div>
 
     <slot name="middle"/>
-
-    <div class="page-side-sitemap">
-      <div class="option-box" v-on:mouseover="showSitemap($event)" v-on:mouseout="hideSitemap($event)">
-        <img src="/images/system/sitemap.png" class="nozoom img" />
-        <span class="show-txt">站点图</span>
-        <div class="sitemap-container">
-            <h4>站点导航图
-              <router-link class="sitemap-top-link" key="/md/about/me/2020-08-25-13年毕业，用两年时间从外包走进互联网大厂.html" to="/md/about/me/2020-08-25-13年毕业，用两年时间从外包走进互联网大厂.html" > 关于我</router-link>
-              <router-link class="sitemap-top-link" key="/md/about/study/2020-04-30-讲道理，只要你是一个爱折腾的程序员，毕业找工作真的不需要再花钱培训.html" to="/md/about/study/2020-04-30-讲道理，只要你是一个爱折腾的程序员，毕业找工作真的不需要再花钱培训.html" > 关于学习</router-link>
-              <router-link class="sitemap-top-link" key="/md/about/job/2020-11-15-BATJTMD，大厂招聘，都招什么样Java程序员？.html" to="/md/about/job/2020-11-15-BATJTMD，大厂招聘，都招什么样Java程序员？.html" > 关于职场</router-link>
-            </h4>
-            <SiteMap />
-        </div>
-      </div>
-    </div>
 
     <PageSidebarBackToTop />
 
@@ -174,14 +92,13 @@
 <script>
 import PageSidebarToc from '@theme/components/PageSidebarToc.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
-import SiteMap from '@theme/components/SiteMap.vue'
 import PageSidebarBackToTop from '@theme/components/PageSidebarBackToTop.vue'
 import { resolvePage } from '../util'
 
 export default {
   name: 'PageSidebar',
 
-  components: { PageSidebarToc, NavLinks, SiteMap, PageSidebarBackToTop },
+  components: { PageSidebarToc, NavLinks, PageSidebarBackToTop },
 
   props: ['pageSidebarItems', 'sidebarItems'],
 
@@ -224,12 +141,6 @@ export default {
       },
       hideTocOver($event){
           $event.currentTarget.className="option-box-toc-over";
-      },
-      showSitemap($event){
-          $event.currentTarget.className="option-box on";
-      },
-      hideSitemap($event){
-          $event.currentTarget.className="option-box";
       }
   }
 
@@ -503,84 +414,6 @@ function flatten (items, res) {
   div.option-box-toc
     display none
 
-.page-side-sitemap
-  position fixed
-  right 10px
-  bottom 50px !important
-  width 44px
-  div.option-box:last-child
-    border-bottom 0px solid #eee
-  div.option-box.on
-    .sitemap-container
-      display block
-  div.option-box
-    font-size 12px
-    position relative
-    display -webkit-box
-    display -ms-flexbox
-    display flex
-    -webkit-box-orient vertical
-    -webkit-box-direction normal
-    -ms-flex-direction column
-    flex-direction column
-    -webkit-box-align center
-    -ms-flex-align center
-    align-items center
-    -webkit-box-pack center
-    -ms-flex-pack center
-    justify-content center
-    border-bottom 1px solid #eee
-    background-color #fff
-    //height 60px
-    cursor pointer
-    .show-txt
-      color gray
-      margin-top 2px
-      font-size 11px
-      padding 4px 0
-  div.option-box:hover
-    //color white
-    //background #eee
-
-.sitemap-container
-  display: none;
-  cursor auto
-  position: absolute;
-  color $textColor
-  left: 100%;
-  bottom: -30px;
-  height: 500px;
-  margin-left: 16px;
-  padding: 0 10px;
-  width: 850px;
-  background: #fff;
-  -webkit-box-shadow: 1px -2px 10px 7px rgba(0,0,0,0.08);
-  box-shadow: 1px -2px 10px 7px rgba(0,0,0,0.08);
-  border-radius: 4px;
-  left: unset;
-  right: 100%;
-  margin-right: 2px;
-  margin-left: 0;
-  h4
-    margin: 5px 0;
-    font-size: 13px;
-    text-align: center;
-    padding: 3px 2px;
-    border-bottom: 1px solid #eaecef;
-    background: #42b983;
-    color: white;
-    .sitemap-top-link
-      color: white;
-      font-size: 10px;
-      float:right;
-      padding:2px 5px;
-      text-decoration:underline;
-  .on
-    display: block;
-  .pos-box
-    position: relative;
-    padding: 10px;
-
 @media (max-width: $MQNarrow)
   .toc-container-sidebar
     display none
@@ -591,8 +424,6 @@ function flatten (items, res) {
     top 65px !important
     div.option-box-toc-over
       display flex
-  .page-side-sitemap
-    right 6px
 
 @media (max-width: $MQMobile)
   .toc-container-sidebar
