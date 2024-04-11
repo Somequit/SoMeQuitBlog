@@ -38,8 +38,7 @@ module.exports = {
         ],
 
         // 侧边栏
-        // sidebar: 'auto',
-        sidebarDepth: 0
+        sidebar: 'auto'
     },
 
     chainWebpack: config => {
@@ -56,6 +55,10 @@ module.exports = {
             //     chunkFilename: 'assets/css/[name].css?v=' + dateTime
             // }]).end();
         }
+    },
+    // 是否开启默认预加载js
+    shouldPrefetch: (file, type) => {
+        return false;
     }
 
 

@@ -17,23 +17,7 @@
             </div>
         </div>
       </div>
-      <div class="option-box-toc-over" v-on:mouseover="showTocOver($event)" v-on:mouseout="hideTocOver($event)">
-        <img src="/images/system/toc.png" class="nozoom" />
-        <span class="show-txt">目录</span>
 
-        <div class="toc-container" ref="tocc">
-            <div class="pos-box">
-              <div class="icon-arrow"></div>
-              <div class="scroll-box" style="max-height:550px">
-                <div style="font-weight:bold;text-align:center;">{{pageSidebarItems[0].title}}</div>
-                <hr/>
-                <div class="toc-box">
-                  <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="3"/>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
       <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">
         <img src="/images/system/wechat.png" class="nozoom" />
         <span class="show-txt">手机看</span>
@@ -48,10 +32,6 @@
             </div>
         </div>
       </div>
-
-<!--      <div class="option-box">-->
-<!--        <FullScreenBtn />-->
-<!--      </div>-->
 
       <div class="option-box" @click="$emit('toggle-sidebar-force')">
         <img src="/images/system/toggle.png" width="30px" class="nozoom" />
@@ -92,13 +72,14 @@
 <script>
 import PageSidebarToc from '@theme/components/PageSidebarToc.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
+import SiteMap from '@theme/components/SiteMap.vue'
 import PageSidebarBackToTop from '@theme/components/PageSidebarBackToTop.vue'
 import { resolvePage } from '../util'
 
 export default {
   name: 'PageSidebar',
 
-  components: { PageSidebarToc, NavLinks, PageSidebarBackToTop },
+  components: { PageSidebarToc, NavLinks, SiteMap, PageSidebarBackToTop },
 
   props: ['pageSidebarItems', 'sidebarItems'],
 
@@ -141,6 +122,12 @@ export default {
       },
       hideTocOver($event){
           $event.currentTarget.className="option-box-toc-over";
+      },
+      showSitemap($event){
+          $event.currentTarget.className="option-box on";
+      },
+      hideSitemap($event){
+          $event.currentTarget.className="option-box";
       }
   }
 
@@ -414,6 +401,84 @@ function flatten (items, res) {
   div.option-box-toc
     display none
 
+.page-side-sitemap
+  position fixed
+  right 10px
+  bottom 50px !important
+  width 44px
+  div.option-box:last-child
+    border-bottom 0px solid #eee
+  div.option-box.on
+    .sitemap-container
+      display block
+  div.option-box
+    font-size 12px
+    position relative
+    display -webkit-box
+    display -ms-flexbox
+    display flex
+    -webkit-box-orient vertical
+    -webkit-box-direction normal
+    -ms-flex-direction column
+    flex-direction column
+    -webkit-box-align center
+    -ms-flex-align center
+    align-items center
+    -webkit-box-pack center
+    -ms-flex-pack center
+    justify-content center
+    border-bottom 1px solid #eee
+    background-color #fff
+    //height 60px
+    cursor pointer
+    .show-txt
+      color gray
+      margin-top 2px
+      font-size 11px
+      padding 4px 0
+  div.option-box:hover
+    //color white
+    //background #eee
+
+.sitemap-container
+  display: none;
+  cursor auto
+  position: absolute;
+  color $textColor
+  left: 100%;
+  bottom: -30px;
+  height: 500px;
+  margin-left: 16px;
+  padding: 0 10px;
+  width: 850px;
+  background: #fff;
+  -webkit-box-shadow: 1px -2px 10px 7px rgba(0,0,0,0.08);
+  box-shadow: 1px -2px 10px 7px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  left: unset;
+  right: 100%;
+  margin-right: 2px;
+  margin-left: 0;
+  h4
+    margin: 5px 0;
+    font-size: 13px;
+    text-align: center;
+    padding: 3px 2px;
+    border-bottom: 1px solid #eaecef;
+    background: #42b983;
+    color: white;
+    .sitemap-top-link
+      color: white;
+      font-size: 10px;
+      float:right;
+      padding:2px 5px;
+      text-decoration:underline;
+  .on
+    display: block;
+  .pos-box
+    position: relative;
+    padding: 10px;
+
 @media (max-width: $MQNarrow)
   .toc-container-sidebar
     display none
@@ -424,6 +489,8 @@ function flatten (items, res) {
     top 65px !important
     div.option-box-toc-over
       display flex
+  .page-side-sitemap
+    right 6px
 
 @media (max-width: $MQMobile)
   .toc-container-sidebar
