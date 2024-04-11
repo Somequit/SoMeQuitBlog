@@ -1,4 +1,4 @@
-# 1. Spring Bean 容器是什么
+## 1. Spring Bean 容器是什么
 
 * Spring 定义的用于存放与管理对象的配置、生命周期与依赖的容器
 * 配置：单例还是多例
@@ -6,7 +6,7 @@
 * 依赖：生命周期的属性填充
 
 
-# 2. Spring Bean 容器流程
+## 2. Spring Bean 容器流程
 
 * 基础流程
 * 定义：接口 BeanDefinition、接口 BeanFactory
@@ -20,7 +20,7 @@
 
 
 
-## 1. 核心抽象类 AbstractBeanFactory
+### 1. 核心抽象类 AbstractBeanFactory
 
 1.  抽象类 AbstractBeanFactory 实现了 getBean 方法：获取 Bean 对象
     * BeanFactory 接口定义了 getBean 方法
@@ -33,7 +33,7 @@
 Spring 源码：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/19f9fe32086a4472822e1e93f9a4f336.png#pic_center)
 
-## 2. 核心实现类 DefaultListableBeanFactory
+### 2. 核心实现类 DefaultListableBeanFactory
 
 1.  抽象类 AbstractAutowireCapableBeanFactory 实现了 createBean(String beanName, BeanDefinition beanDefinition) 方法：创建 Bean 对象
     * 依赖了 BeanDefinition 接口
@@ -47,7 +47,7 @@ Spring 源码：
 Spring 源码：
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/6d42463a9b8c486c95c5270a25aa9845.png#pic_center)
 
-## 3. 核心接口 InstantiationStrategy
+### 3. 核心接口 InstantiationStrategy
 
 * 抽象类 AbstractAutowireCapableBeanFactory 定义：使用 JDK 还是 Cglib 实例化带参 Bean 对象
 * 核心接口 InstantiationStrategy 定义：instantiate(BeanDefinition beanDefinition, String beanName, Constructor ctor, Object\[] args) throws BeansException; 实例化对象、无论是否带参
@@ -59,7 +59,7 @@ Spring 源码：
 	* net.sf.cglib.proxy.NoOp：在 Cglib 使用回调时把方法调用直接委派到父类实现（或者说传入对象直接调用方法）
 
 
-## 4. 核心实现类 AbstractAutowireCapableBeanFactory
+### 4. 核心实现类 AbstractAutowireCapableBeanFactory
 
 * 实现类 PropertyValue 定义了：Bean 对象的属性名与与数据
 * 实现类 PropertyValues 封装了：PropertyValue
@@ -68,22 +68,22 @@ Spring 源码：
 * 工具类 BeanReference 定义了：它在依赖注入时属于一个 Bean 对象
 * 注意此时并未考虑循环依赖的问题
 
-## 5. 总结
+### 5. 总结
 
 * 总结：
 	* 系统设计通常是通过接口、抽象类、继承与实现，隔离类的功能职责和作用范围
 	* Spring 内部将 Bean 对象拆分放入 BeanDefinition，方便统一管理
 
 
-# 3. 我的代码结构与源码
+## 3. 我的代码结构与源码
 
-## 1. 我的调用类图（模拟 Spring 源码）
+### 1. 我的调用类图（模拟 Spring 源码）
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2cab4a872393435594970c3d9ce4b835.png#pic_center)
 
 
 
-## 2. 我的代码结构（模拟 Spring 源码）
+### 2. 我的代码结构（模拟 Spring 源码）
 ```
 .
 └── beans
@@ -115,9 +115,9 @@ Spring 源码：
 ```
 
 
-## 3. 源码
+### 3. 源码
 
-### 1. BeanFactory 接口定义获取 Bean 对象
+#### 1. BeanFactory 接口定义获取 Bean 对象
 
 ```java
 /**
@@ -135,7 +135,7 @@ public interface BeanFactory {
 ```
 
 
-### 2. AbstractBeanFactory 抽象类
+#### 2. AbstractBeanFactory 抽象类
 
 ```java
 /**
@@ -188,7 +188,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 ```
 
 
-### 3. DefaultSingletonBeanRegistry 定义单例对象
+#### 3. DefaultSingletonBeanRegistry 定义单例对象
 
 ```java
 /**
@@ -223,7 +223,7 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 ```
 
 
-### 4. AbstractAutowireCapableBeanFactory 核心抽象类，创建对象核心
+#### 4. AbstractAutowireCapableBeanFactory 核心抽象类，创建对象核心
 
 ```java
 /**
@@ -340,7 +340,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 ```
 
 
-### 5. DefaultListableBeanFactory 最终核心使用实现类
+#### 5. DefaultListableBeanFactory 最终核心使用实现类
 
 ```java
 /**
@@ -381,7 +381,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
 ```
 
 
-### 6. BeanDefinition 实现类，解耦 Bean 对象
+#### 6. BeanDefinition 实现类，解耦 Bean 对象
 
 ```java
 /**
@@ -407,7 +407,7 @@ public class BeanDefinition {
 ```
 
 
-### 7. SimpleInstantiationStrategy JDK 实例化对象
+#### 7. SimpleInstantiationStrategy JDK 实例化对象
 
 ```java
 /**
@@ -450,7 +450,7 @@ public class SimpleInstantiationStrategy implements InstantiationStrategy {
 ```
 
 
-### 8. CglibSubclassingInstantiationStrategy Cglib 实例化对象
+#### 8. CglibSubclassingInstantiationStrategy Cglib 实例化对象
 
 ```java
 /**
@@ -492,7 +492,7 @@ public class CglibSubclassingInstantiationStrategy implements InstantiationStrat
 ```
 
 
-### 9. PropertyValue 定义对象的属性名与与属性值
+#### 9. PropertyValue 定义对象的属性名与与属性值
 
 ```java
 /**
