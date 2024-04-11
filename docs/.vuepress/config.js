@@ -13,6 +13,21 @@ module.exports = {
     markdown: {
       lineNumbers: false
     },
+    chainWebpack: config => {
+        if (process.env.NODE_ENV === 'production') {
+            const dateTime = new Date().getTime();
+
+            // 清除js版本号
+            config.output.filename('assets/js/cg-[name].js?v=' + dateTime).end();
+            config.output.chunkFilename('assets/js/cg-[name].js?v=' + dateTime).end();
+
+            // 清除css版本号
+            // config.plugin('mini-css-extract-plugin').use(require('mini-css-extract-plugin'), [{
+            //     filename: 'assets/css/[name].css?v=' + dateTime,
+            //     chunkFilename: 'assets/css/[name].css?v=' + dateTime
+            // }]).end();
+        }
+    },
     // vuepress 默认主题的设置
     themeConfig: {
         // 导航栏图标
