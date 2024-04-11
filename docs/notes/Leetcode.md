@@ -1,4 +1,3 @@
-@[toc]
 # 题目
 
 * Problem: [100241. 求出所有子序列的能量和](https://leetcode.cn/problems/find-the-sum-of-the-power-of-all-subsequences/description/)

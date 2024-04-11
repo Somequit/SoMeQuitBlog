@@ -50,7 +50,6 @@ module.exports = {
         ],
 
         // 侧边栏
-        sidebar: 'auto',
-        sidebarDepth: 1
+        sidebar: 'auto'
     }
 };
