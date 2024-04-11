@@ -1,3 +1,7 @@
-# 我的 Leetcode
+# Leetcode
 
-[Leetcode](/notes/Leetcode.html)
+[Leetcode](/notes/leetcode)
+
+# Spring
+
+[Spring](/notes/spring)

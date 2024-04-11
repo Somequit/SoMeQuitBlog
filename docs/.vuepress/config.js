@@ -13,6 +13,35 @@ module.exports = {
     markdown: {
       lineNumbers: false
     },
+    // vuepress 默认主题的设置
+    themeConfig: {
+        // 导航栏图标
+        logo: '/logo.png',
+        // 导航栏项目，按顺序从左到右显示
+        nav: [
+            // 单项
+            {text: '首页', link: '/'},
+            {text: '作者', link: '/notes/about.html'},
+            {text: 'Spring 详解', link: '/notes/spring/'},
+            // 列表项，可以在 item 里嵌套 item 实现分类
+            {
+                text: 'Leetcode',
+                items: [
+                    {text: 'Leetcode-刷题',
+                        items: [{text: 'Leetcode', link: '/notes/leetcode/'}]
+                    },
+                    {text: 'Leetcode-HOT100',
+                        items: [{text: 'Leetcode', link: '/notes/leetcode/'}]
+                    }
+                ]
+            }
+        ],
+
+        // 侧边栏
+        // sidebar: 'auto',
+        sidebarDepth: 0
+    },
+
     chainWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
             const dateTime = new Date().getTime();
@@ -27,29 +56,7 @@ module.exports = {
             //     chunkFilename: 'assets/css/[name].css?v=' + dateTime
             // }]).end();
         }
-    },
-    // vuepress 默认主题的设置
-    themeConfig: {
-        // 导航栏图标
-        logo: '/logo.png',
-        // 导航栏项目，按顺序从左到右显示
-        nav: [
-            // 单项
-            { text: '首页', link: '/' },
-            { text: '作者', link: '/about' },
-            { text: '更多相关', link: 'https://kotkot.club/' },
-            // 列表项，可以在 item 里嵌套 item 实现分类
-            // { text: '歌声合成', link: '/music/' },
-            {
-                text: '选择笔记',
-                items: [
-                    { text: '歌声合成', items: [{ text:'扒谱', link: '/music/transcripting/'}, { text:'UTAU', link: '/music/UTAU/'}, { text:'混音', link: '/music/mixing/'}] },
-                    { text: '网页开发', items: [{ text:'HTML', link: '/web/html/'}, { text:'CSS', link: '/web/css/'}, { text:'JavaScript', link: '/web/js/'}] },
-                ]
-            }
-        ],
-
-        // 侧边栏
-        sidebar: 'auto'
     }
+
+
 };
