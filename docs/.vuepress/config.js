@@ -2,7 +2,7 @@ module.exports = {
     // 编译之后的站点地址，静态文件的地址
     dest: ".site",
     // 标题以及描述
-    title: 'So me quitの博客',
+    title: 'So me quit の 博客',
     description: 'Java 不止 不止 Java！',
     // HTML head 标签中的内容，常用于给网站添加图标和链接样式表
     head: [
