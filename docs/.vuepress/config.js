@@ -3,7 +3,7 @@ module.exports = {
     dest: ".site",
     // 标题以及描述
     title: 'So me quitの博客',
-    description: 'Java 不止与不止 Java！',
+    description: 'Java 不止 不止 Java！',
     // HTML head 标签中的内容，常用于给网站添加图标和链接样式表
     head: [
         ['link', { rel: 'icon', href: '/logo.png' }]

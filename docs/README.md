@@ -1,15 +1,18 @@
 ---
 home: true
 heroImage: /logo.png
-actionText: 开始阅读 →
-actionLink: /notes/
+actionLinks:
+- link: /notes/
+  text: 开始阅读 →
+  class: primary
+- link: https://blog.csdn.net/qq_33530115
+  text: 专注如一的博客
+  class: secondary
 features:
-- title: 沉淀
-  details: 沉淀沉淀，沉淀沉淀。
-- title: 分享
-  details: 分享分享，分享分享。
-- title: 成长
-  details: 成长成长，成长成长。
+- title: 专注如一
+  details: 同君一席话，胜读十年书。
+- title: 增广贤文
+  details: 是非终日有，不听自然无。
 ---
 
 ::: slot footer
