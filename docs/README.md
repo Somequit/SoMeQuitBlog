@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.png
 actionLinks:
-- link: /notes/
+- link: /notes/java/base/计算机基础.md
   text: 开始阅读 →
   class: primary
 - link: https://blog.csdn.net/qq_33530115
