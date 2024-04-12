@@ -11,7 +11,7 @@ module.exports = {
     // 网站基础目录
     base: '/',
     markdown: {
-      lineNumbers: false
+      lineNumbers: true
     },
     // vuepress 默认主题的设置
     themeConfig: {
@@ -103,7 +103,7 @@ module.exports = {
         ],
 
         // 侧边栏
-        sidebar: 'auto'
+        sidebarDepth: 0
     },
 
     chainWebpack: config => {

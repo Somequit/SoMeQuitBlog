@@ -18,6 +18,23 @@
         </div>
       </div>
 
+      <div class="option-box-toc-over" v-on:mouseover="showTocOver($event)" v-on:mouseout="hideTocOver($event)">
+        <img src="/images/system/toc.png" class="nozoom" />
+        <span class="show-txt">目录</span>
+        <div class="toc-container" ref="tocc">
+            <div class="pos-box">
+              <div class="icon-arrow"></div>
+              <div class="scroll-box" style="max-height:550px">
+                <div style="font-weight:bold;text-align:center;">{{pageSidebarItems[0].title}}</div>
+                <hr/>
+                <div class="toc-box">
+                  <PageSidebarToc :depth="0" :items="pageSidebarItems" :sidebarDepth="3"/>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
       <div class="option-box" v-on:mouseover="showToc($event)" v-on:mouseout="hideToc($event)">
         <img src="/images/system/wechat.png" class="nozoom" />
         <span class="show-txt">手机看</span>
