@@ -17,6 +17,8 @@ module.exports = {
     themeConfig: {
         // 导航栏图标
         logo: '/logo.png',
+        // 侧边栏
+        sidebarDepth: 0,
         // 导航栏项目，按顺序从左到右显示
         nav: [
             // 可单项、可在 item 里嵌套 item 实现分类
@@ -101,10 +103,18 @@ module.exports = {
                 ]
             },
         ],
-
-        // 侧边栏
-        sidebarDepth: 0
     },
+    plugins: [
+        // See: https://github.com/francoischalifour/medium-zoom#options
+        ['@vuepress/medium-zoom', {
+            selector: 'img:not(.nozoom)',
+            options: {
+                margin: 16
+            }
+        }],
+        // see: https://github.com/znicholasbrown/vuepress-plugin-code-copy
+        ['vuepress-plugin-code-copy', true],
+    ],
 
     chainWebpack: config => {
         if (process.env.NODE_ENV === 'production') {
