@@ -211,6 +211,7 @@ function getBarJavaCollection() {
             sidebarDepth: 0,
             children: [
                 "2023-04-03-第一章-集合框架设计.md",
+                "2023-04-05-第二章-具体集合.md",
             ]
         }
     ]
