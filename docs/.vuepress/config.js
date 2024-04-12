@@ -68,30 +68,30 @@ module.exports = {
                 // 可单项、可在 item 里嵌套 item 实现分类
                 {text: '首页', link: '/'},
 
-                {text: '作者', link: '/notes/about.md'},
+                {text: '作者', link: '/notes/about/about.md'},
 
                 {text: 'Java',
                     items: [
                         {text: '基础篇',
-                            link: '/notes/java/base/计算机基础.md'},
+                            link: '/notes/java/base/2023-03-02-第一章-计算机基础.md'},
 
                         {text: '集合篇',
-                            link: '/notes/java/collection/collection.md'},
+                            link: '/notes/java/collection/2023-04-03-第一章-集合框架设计.md'},
 
                         {text: '并发篇',
-                            link: '/notes/java/concurrent/concurrent.md'},
+                            link: '/notes/java/concurrent/2023-04-10-第一章-并发基础.md'},
 
                         {text: 'JVM',
-                            link: '/notes/java/jvm/jvm.md'},
+                            link: '/notes/java/jvm/2023-04-15-第一章-走近Java.md'},
 
                         {text: '网络编程（I/O）',
-                            link: '/notes/java/io/io.md'},
-
-                        {text: '设计模式',
-                            link: '/notes/java/design-pattern/design-pattern.md'},
+                            link: '/notes/java/io/2023-05-10-第一章-IO模型.md'},
 
                         {text: '新版本',
-                            link: '/notes/java/new-version/new-version.md'},
+                            link: '/notes/java/new-version/2023-05-13-第一章-函数式编程.md'},
+
+                        {text: '设计模式',
+                            link: '/notes/java/design-pattern/2023-06-05-第一章-简介设计模式.md'},
                     ]
                 },
 
@@ -117,14 +117,14 @@ module.exports = {
                 {text: 'Spring 详解',
                     items: [
                         {text: '手写简易-Spring',
-                            link: '/notes/spring/easy-spring/easy-spring.md'},
+                            link: '/notes/spring/easy-spring/2023-03-28-第一章-手写简易 Spring（一）.md'},
 
                         {text: 'Spring与SpringBoot简介',
-                            link: '/notes/spring/spring-springboot/spring-springboot.md'},
+                            link: '/notes/spring/spring-springboot/2023-03-20-第一章-Spring 简介.md'},
                     ]
                 },
 
-                {text: 'MySQL', link: '/notes/mysql/mysql.md'},
+                {text: 'MySQL', link: '/notes/mysql/2023-06-08-第一章-SQL 查询语句是如何执行的.md'},
 
                 {text: 'Redis', link: '/notes/redis/redis.md'},
 
@@ -157,8 +157,8 @@ module.exports = {
                 "/notes/java/concurrent/": getBarJavaConcurrent(),
                 "/notes/java/jvm/": getBarJvm(),
                 "/notes/java/io/": getBarJavaIO(),
-                "/notes/java/design-pattern/": getBarJavaDesignPattern(),
                 "/notes/java/new-version/": getBarJavaNewVersion(),
+                "/notes/java/design-pattern/": getBarJavaDesignPattern(),
 
                 "/notes/algorithm/leetcode/contest/": getBarAlgorithmLeetcodeContest(),
                 "/notes/algorithm/leetcode/problem/": getBarAlgorithmLeetcodeProblem(),
@@ -195,8 +195,8 @@ function getBarJavaBase() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
-                "计算机基础.md",
-                "面向对象.md",
+                "2023-03-02-第一章-计算机基础.md",
+                "2023-03-03-第二章-面向对象.md",
             ]
         }
     ]
@@ -210,7 +210,7 @@ function getBarJavaCollection() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
-
+                "2023-04-03-第一章-集合框架设计.md",
             ]
         }
     ]
@@ -224,6 +224,7 @@ function getBarJavaConcurrent() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-04-10-第一章-并发基础.md",
             ]
         }
     ]
@@ -237,6 +238,7 @@ function getBarJvm() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-04-15-第一章-走近Java.md",
             ]
         }
     ]
@@ -250,19 +252,7 @@ function getBarJavaIO() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
-            ]
-        }
-    ]
-}
-
-// "/notes/java/design-pattern/"
-function getBarJavaDesignPattern() {
-    return [
-        {
-            title: "设计模式",
-            collapsable: false,
-            sidebarDepth: 0,
-            children: [
+                "2023-05-10-第一章-IO模型.md",
             ]
         }
     ]
@@ -276,6 +266,21 @@ function getBarJavaNewVersion() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-05-13-第一章-函数式编程.md",
+            ]
+        }
+    ]
+}
+
+// "/notes/java/design-pattern/"
+function getBarJavaDesignPattern() {
+    return [
+        {
+            title: "设计模式",
+            collapsable: false,
+            sidebarDepth: 0,
+            children: [
+                "2023-06-05-第一章-简介设计模式.md",
             ]
         }
     ]
@@ -354,6 +359,7 @@ function getBarSpringEasySpring() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-03-28-第一章-手写简易 Spring（一）.md",
             ]
         }
     ]
@@ -367,6 +373,7 @@ function getBarSpringSpringSpringboot() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-03-20-第一章-Spring 简介.md",
             ]
         }
     ]
@@ -380,6 +387,7 @@ function getBarMysql() {
             collapsable: false,
             sidebarDepth: 0,
             children: [
+                "2023-06-08-第一章-SQL 查询语句是如何执行的.md",
             ]
         }
     ]
