@@ -25,7 +25,7 @@ module.exports = {
             {text: 'Java',
                 items: [
                     {text: '基础篇',
-                        link: '/notes/java/base/base.html'},
+                        link: '/notes/java/base/计算机基础.html'},
 
                     {text: '集合篇',
                         link: '/notes/java/collection/collection.htm'},
@@ -49,13 +49,13 @@ module.exports = {
             {text: '算法',
                 items: [
                     {text: 'Leetcode-比赛',
-                        link: '/notes/algorithm/leetcode-contest/contest.html'},
+                        link: '/notes/algorithm/leetcode/contest/contest.html'},
 
                     {text: 'Leetcode-好题',
-                        link: '/notes/algorithm/leetcode-problem/problem.html'},
+                        link: '/notes/algorithm/leetcode/problem/problem.html'},
 
                     {text: 'Leetcode-HOT100',
-                        link: '/notes/algorithm/leetcode-hot100/hot100.html'},
+                        link: '/notes/algorithm/leetcode/hot100/hot100.html'},
 
                     {text: '算法模板',
                         link: '/notes/algorithm/template/template.html'},
