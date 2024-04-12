@@ -19,22 +19,87 @@ module.exports = {
         logo: '/logo.png',
         // 导航栏项目，按顺序从左到右显示
         nav: [
-            // 单项
+            // 可单项、可在 item 里嵌套 item 实现分类
             {text: '首页', link: '/'},
             {text: '作者', link: '/notes/about.html'},
-            {text: 'Spring 详解', link: '/notes/spring/'},
-            // 列表项，可以在 item 里嵌套 item 实现分类
-            {
-                text: 'Leetcode',
+            {text: 'Java',
                 items: [
-                    {text: 'Leetcode-刷题',
-                        items: [{text: 'Leetcode', link: '/notes/leetcode/'}]
-                    },
-                    {text: 'Leetcode-HOT100',
-                        items: [{text: 'Leetcode', link: '/notes/leetcode/'}]
-                    }
+                    {text: '基础篇',
+                        link: '/notes/java/base/base.html'},
+
+                    {text: '集合篇',
+                        link: '/notes/java/collection/collection.htm'},
+
+                    {text: '并发篇',
+                        link: '/notes/java/concurrent/concurrent.htm'},
+
+                    {text: 'JVM',
+                        link: '/notes/java/jvm/jvm.htm'},
+
+                    {text: '网络编程（I/O）',
+                        link: '/notes/java/io/io.htm'},
+
+                    {text: '设计模式',
+                        link: '/notes/java/design-pattern/design-pattern.htm'},
+
+                    {text: '新版本',
+                        link: '/notes/java/new-version/new-version.htm'},
                 ]
-            }
+            },
+            {text: '算法',
+                items: [
+                    {text: 'Leetcode-比赛',
+                        link: '/notes/algorithm/leetcode-contest/contest.html'},
+
+                    {text: 'Leetcode-好题',
+                        link: '/notes/algorithm/leetcode-problem/problem.html'},
+
+                    {text: 'Leetcode-HOT100',
+                        link: '/notes/algorithm/leetcode-hot100/hot100.html'},
+
+                    {text: '算法模板',
+                        link: '/notes/algorithm/template/template.html'},
+
+                    {text: 'ACM',
+                        link: '/notes/algorithm/acm/acm.html'},
+                ]
+            },
+
+            {text: 'Spring 详解',
+                items: [
+                    {text: '手写简易-Spring',
+                        link: '/notes/spring/easy-spring/easy-spring.html'},
+
+                    {text: 'Spring与SpringBoot简介',
+                        link: '/notes/spring/spring-springboot/spring-springboot.html'},
+                ]
+            },
+
+            {text: 'MySQL', link: '/notes/mysql/mysql.html'},
+
+            {text: 'Redis', link: '/notes/redis/redis.html'},
+
+            {text: '分布式理论',
+                items: [
+                    {text: '《大型网站技术架构》',
+                        link: '/notes/distributed/technical-architecture/technical-architecture.html'},
+                ]
+            },
+
+            {text: 'OpenAI', link: '/notes/open-ai/open-ai.html'},
+
+            {text: '线上问题',
+                items: [
+                    {text: '解决实际线上问题',
+                        link: '/notes/production/issue/issue.thml'},
+
+                    {text: '技术总结',
+                        link: '/notes/production/summary/summary.thml'},
+
+                    {text: '业务与技术',
+                        link: '/notes/production/business/business.thml'},
+                ]
+            },
         ],
 
         // 侧边栏
